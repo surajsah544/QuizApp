@@ -11,7 +11,7 @@ public class Question {
         this.correctAnswer = correctAnswer;
     }
 
-    public String getQuesText() {
+    public String getQuestionText() {
         return questionText;
     }
 

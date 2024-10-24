@@ -9,14 +9,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/")
+@WebServlet("/quizes")
 public class QuizServlet extends HttpServlet {
-    // private  quizzes;
-
-    // @Override
-    // public void init() throws ServletException {
-        
-    // }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,7 +20,15 @@ public class QuizServlet extends HttpServlet {
         quiz.addQuestion(new Question("What is 2 + 3?", new String[]{"3", "4", "5"}, "5"));
         quiz.addQuestion(new Question("What is 4 + 2?", new String[]{"3", "4", "5"}, "6"));
         quizzes.add(quiz);
+
+
+        if (request.getParameter("id") != null) {
+            int id = Integer.parseInt(request.getParameter("id"));
+            request.setAttribute("quiz", quizzes.get(id));
+            request.getRequestDispatcher("/quiz.jsp").forward(request, response);
+        }
+        
         request.setAttribute("quizzes", quizzes);
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/quizes.jsp").forward(request, response);
     }
 }

@@ -16,6 +16,10 @@ public class Quiz {
         questions.add(question);
     }
 
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
