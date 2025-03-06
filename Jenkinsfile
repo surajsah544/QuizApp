@@ -17,11 +17,11 @@ pipeline {
                 sh 'mvn package'
             }
         }
-        stage('Deploy') {
-            steps {
-                // Check which user Jenkins is running as
-                sh 'echo "Urm560037NJ@" | sudo -S cp /Users/nikhiljoshi/Desktop/miniDevOps/QuizApp/target/QuizApp.war /Users/nikhiljoshi/tomcat/webapps'
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         // Check which user Jenkins is running as
+        //         sh 'echo "Urm560037NJ@" | sudo -S cp /Users/nikhiljoshi/Desktop/miniDevOps/QuizApp/target/QuizApp.war /Users/nikhiljoshi/tomcat/webapps'
+        //     }
+        // }
     }
 }
