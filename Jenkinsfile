@@ -1,12 +1,12 @@
 pipeline {
-    agent { label 'worker' }
+    agent { label 'linux' }
     tools {
         maven 'MVN'
     }
     stages {
         stage('Source Code') {
             steps {
-                git branch: 'master', url: 'https://github.com/nikhiljoshi7712/QuizApp'
+                git branch: 'master', url: 'https://github.com/surajsah544/QuizApp'
             }
         }
         stage('Build') {
